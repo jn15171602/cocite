@@ -1,5 +1,5 @@
 # Build stage
-FROM golang:1.24.1 as builder
+FROM golang:1.24.1 AS builder
 
 WORKDIR /app
 
@@ -8,16 +8,16 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o chat-forum ./cmd/server
+RUN go build -o cocite ./cmd/server
 
 # Run stage
 FROM debian:bookworm-slim
 
 WORKDIR /app
 
-COPY --from=builder /app/chat-forum .
+COPY --from=builder /app/cocite .
 COPY internal/templates/ internal/templates/
 
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["./cocite"]

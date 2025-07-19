@@ -1,0 +1,18 @@
+FROM golang
+
+WORKDIR /app
+
+# Copy go.mod and download deps
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the code
+COPY . .
+
+# Install any dev tools if you want
+RUN apt-get update && apt-get install -y vim curl && rm -rf /var/lib/apt/lists/*
+
+EXPOSE 81
+
+# Run in dev mode
+CMD ["go", "run", "./cmd/server/main.go"]
