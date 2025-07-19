@@ -1,0 +1,17 @@
+# Go build artifacts
+cocite
+*.exe
+*.out
+*.tar
+
+# Dependency/vendor directories
+vendor/
+bin/
+
+# Editor/IDE settings
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
