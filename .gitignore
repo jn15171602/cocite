@@ -12,7 +12,7 @@ bin/
 .vscode/
 .idea/
 
-# OS junk
+# OS junk--because we're not GAY
 .DS_Store
 Thumbs.db
 
