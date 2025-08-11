@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y vim curl && rm -rf /var/lib/apt/lists/*
 EXPOSE 8080
 
 # Run in dev mode
-CMD ["go", "run", "/app/cmd/server/main.exe"]
+CMD ["go", "run", "/app/cmd/server/main.go"]
