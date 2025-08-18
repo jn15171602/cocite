@@ -1,0 +1,12 @@
+[build]
+  bin = "./tmp/main/server.exe"
+  cmd = '''go build -o ./tmp/main/ ./cmd/server'''
+  # cmd = '''templ generate; go build -buildvcs=false -o ./tmp/main .'''
+  exclude_regex = ["_test.go", "_templ.go", ".css"]
+  include_ext = ["go", "templ"]
+
+[proxy]
+  # Enable live-reloading on the browser.
+  enabled = true
+  proxy_port = 8081
+  app_port = 8080

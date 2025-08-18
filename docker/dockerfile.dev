@@ -11,8 +11,10 @@ COPY . .
 
 # Install any dev tools if you want
 RUN apt-get update && apt-get install -y vim curl && rm -rf /var/lib/apt/lists/*
+RUN go install github.com/air-verse/air@latest
 
 EXPOSE 8080
 
 # Run in dev mode
-CMD ["go", "run", "/app/cmd/server/main.go"]
+# CMD ["go", "run", "/app/cmd/server/main.go"]
+CMD ["air"]
