@@ -3,7 +3,7 @@
   cmd = '''go build -buildvcs=false -o ./tmp/main/ ./cmd/server'''
   # cmd = '''templ generate; go build -buildvcs=false -o ./tmp/main .'''
   exclude_regex = ["_test.go", "_templ.go", ".css"]
-  include_ext = ["go", "templ"]
+  include_ext = ["go", "templ", "html"]
 
 [proxy]
   # Enable live-reloading on the browser.
