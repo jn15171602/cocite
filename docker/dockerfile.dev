@@ -13,9 +13,6 @@ COPY . .
 RUN apt-get update && apt-get install -y vim curl && rm -rf /var/lib/apt/lists/*
 RUN go install github.com/air-verse/air@latest
 
-EXPOSE 8080
-EXPOSE 8081
-
 # Run in dev mode
 # CMD ["go", "run", "/app/cmd/server/main.go"]
 CMD ["air"]
